@@ -92,6 +92,12 @@
         GUse.aFunc.Converter()
 
     End Sub
+
+    Private Sub fromMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        'if the program is exited, click the stop button
+        btnStop.PerformClick()
+
+    End Sub
 End Class
 
 Public Class AppFunctions
