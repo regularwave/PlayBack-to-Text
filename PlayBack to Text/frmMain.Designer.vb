@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class fromMain
+Partial Class formMain
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -23,6 +23,7 @@ Partial Class fromMain
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(formMain))
         Me.txtOutputDir = New System.Windows.Forms.TextBox()
         Me.btnReset = New System.Windows.Forms.Button()
         Me.btnStart = New System.Windows.Forms.Button()
@@ -142,7 +143,7 @@ Partial Class fromMain
         Me.btnStop.Text = "Stop"
         Me.btnStop.UseVisualStyleBackColor = True
         '
-        'fromMain
+        'formMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -158,7 +159,8 @@ Partial Class fromMain
         Me.Controls.Add(Me.btnStart)
         Me.Controls.Add(Me.btnReset)
         Me.Controls.Add(Me.txtOutputDir)
-        Me.Name = "fromMain"
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Name = "formMain"
         Me.Text = "PlayBack to Text"
         CType(Me.nudInterval, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

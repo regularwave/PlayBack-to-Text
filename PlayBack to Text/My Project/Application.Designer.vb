@@ -32,7 +32,7 @@ Namespace My
 
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()> _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.PlayBack_to_Text.fromMain
+            Me.MainForm = Global.PlayBack_to_Text.formMain
         End Sub
     End Class
 End Namespace

@@ -1,5 +1,5 @@
-﻿Public Class fromMain
-    Private Sub fromMain_Load(sender As Object, e As EventArgs) Handles Me.Load
+﻿Public Class formMain
+    Private Sub formMain_Load(sender As Object, e As EventArgs) Handles Me.Load
 
         'check to see if this is the first time the program has been run
         GUse.aFunc.CheckForFirstRun()
@@ -93,7 +93,7 @@
 
     End Sub
 
-    Private Sub fromMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+    Private Sub formMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         'if the program is exited, click the stop button
         btnStop.PerformClick()
 
