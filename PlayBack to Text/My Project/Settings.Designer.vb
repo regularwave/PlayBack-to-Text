@@ -69,12 +69,12 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-        Public Property OutputhPath() As String
+        Public Property OutputPath() As String
             Get
-                Return CType(Me("OutputhPath"),String)
+                Return CType(Me("OutputPath"),String)
             End Get
             Set
-                Me("OutputhPath") = value
+                Me("OutputPath") = value
             End Set
         End Property
         
@@ -92,13 +92,13 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-        Public Property HomeDir() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property firstrun() As Boolean
             Get
-                Return CType(Me("HomeDir"),String)
+                Return CType(Me("firstrun"),Boolean)
             End Get
             Set
-                Me("HomeDir") = value
+                Me("firstrun") = value
             End Set
         End Property
     End Class

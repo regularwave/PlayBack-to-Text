@@ -5,14 +5,14 @@
     <Setting Name="JSONPath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="OutputhPath" Type="System.String" Scope="User">
+    <Setting Name="OutputPath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="TimerInterval" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">5000</Value>
     </Setting>
-    <Setting Name="HomeDir" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+    <Setting Name="firstrun" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>
