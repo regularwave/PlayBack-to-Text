@@ -25,6 +25,9 @@
             lblOutput.ForeColor = Color.Red
         End If
 
+        'set the break string
+        txtBreak.Text = My.Settings.BreakString
+
         'if playback.json has been found and a valid path is set, enable start button
         btnStart.Enabled = GUse.aFunc.AllReady()
 
@@ -72,7 +75,7 @@
     End Sub
 
     Private Sub btnStop_Click(sender As Object, e As EventArgs) Handles btnStop.Click
-        'disables the timer & stop, enables the start & file funcs, writes " - " to txt file
+        'disables the timer & stop, enables the start & file funcs, writes the break to txt file
         tInterval.Enabled = False
         btnStop.Enabled = False
         btnStart.Enabled = True
@@ -81,7 +84,7 @@
         btnReset.Enabled = True
 
         Using sw As New IO.StreamWriter(My.Settings.OutputPath & "\playback.txt")
-            sw.WriteLine(" - ")
+            sw.WriteLine(My.Settings.BreakString)
         End Using
 
     End Sub
@@ -96,6 +99,12 @@
     Private Sub formMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         'if the program is exited, click the stop button
         btnStop.PerformClick()
+
+    End Sub
+
+    Private Sub txtBreak_TextChanged(sender As Object, e As EventArgs) Handles txtBreak.TextChanged
+        'if the break string is changed, save it to BreakString each time it's changed
+        My.Settings.BreakString = txtBreak.Text
 
     End Sub
 End Class
@@ -190,7 +199,7 @@ Public Class AppFunctions
         'converts playback.json to a "song - artist" string and returns it
         Dim stringJSON As String = GUse.aFunc.JSONtoString()
         Dim parsedNP = JsonConvert.DeserializeObject(Of NowPlaying)(stringJSON)
-        Dim strtowrite As String = parsedNP.song.title & " - " & parsedNP.song.artist
+        Dim strtowrite As String = parsedNP.song.title & My.Settings.BreakString & parsedNP.song.artist
 
         Return strtowrite
 

@@ -36,6 +36,8 @@ Partial Class formMain
         Me.nudInterval = New System.Windows.Forms.NumericUpDown()
         Me.lblInterval = New System.Windows.Forms.Label()
         Me.btnStop = New System.Windows.Forms.Button()
+        Me.lblBreak = New System.Windows.Forms.Label()
+        Me.txtBreak = New System.Windows.Forms.TextBox()
         CType(Me.nudInterval, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -49,19 +51,19 @@ Partial Class formMain
         '
         'btnReset
         '
-        Me.btnReset.Location = New System.Drawing.Point(277, 58)
+        Me.btnReset.Location = New System.Drawing.Point(257, 58)
         Me.btnReset.Name = "btnReset"
-        Me.btnReset.Size = New System.Drawing.Size(20, 23)
+        Me.btnReset.Size = New System.Drawing.Size(43, 23)
         Me.btnReset.TabIndex = 1
-        Me.btnReset.Text = "X"
+        Me.btnReset.Text = "Reset"
         Me.btnReset.UseVisualStyleBackColor = True
         '
         'btnStart
         '
         Me.btnStart.Enabled = False
-        Me.btnStart.Location = New System.Drawing.Point(103, 58)
+        Me.btnStart.Location = New System.Drawing.Point(8, 84)
         Me.btnStart.Name = "btnStart"
-        Me.btnStart.Size = New System.Drawing.Size(79, 23)
+        Me.btnStart.Size = New System.Drawing.Size(145, 23)
         Me.btnStart.TabIndex = 1
         Me.btnStart.Text = "Start"
         Me.btnStart.UseVisualStyleBackColor = True
@@ -116,7 +118,7 @@ Partial Class formMain
         '
         'nudInterval
         '
-        Me.nudInterval.Location = New System.Drawing.Point(48, 59)
+        Me.nudInterval.Location = New System.Drawing.Point(195, 59)
         Me.nudInterval.Maximum = New Decimal(New Integer() {180, 0, 0, 0})
         Me.nudInterval.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.nudInterval.Name = "nudInterval"
@@ -127,7 +129,7 @@ Partial Class formMain
         'lblInterval
         '
         Me.lblInterval.AutoSize = True
-        Me.lblInterval.Location = New System.Drawing.Point(5, 61)
+        Me.lblInterval.Location = New System.Drawing.Point(152, 61)
         Me.lblInterval.Name = "lblInterval"
         Me.lblInterval.Size = New System.Drawing.Size(42, 13)
         Me.lblInterval.TabIndex = 3
@@ -136,18 +138,36 @@ Partial Class formMain
         'btnStop
         '
         Me.btnStop.Enabled = False
-        Me.btnStop.Location = New System.Drawing.Point(189, 58)
+        Me.btnStop.Location = New System.Drawing.Point(155, 84)
         Me.btnStop.Name = "btnStop"
-        Me.btnStop.Size = New System.Drawing.Size(79, 23)
+        Me.btnStop.Size = New System.Drawing.Size(145, 23)
         Me.btnStop.TabIndex = 1
         Me.btnStop.Text = "Stop"
         Me.btnStop.UseVisualStyleBackColor = True
+        '
+        'lblBreak
+        '
+        Me.lblBreak.AutoSize = True
+        Me.lblBreak.Location = New System.Drawing.Point(5, 62)
+        Me.lblBreak.Name = "lblBreak"
+        Me.lblBreak.Size = New System.Drawing.Size(35, 13)
+        Me.lblBreak.TabIndex = 5
+        Me.lblBreak.Text = "Break"
+        '
+        'txtBreak
+        '
+        Me.txtBreak.Location = New System.Drawing.Point(46, 58)
+        Me.txtBreak.Name = "txtBreak"
+        Me.txtBreak.Size = New System.Drawing.Size(100, 20)
+        Me.txtBreak.TabIndex = 6
         '
         'formMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(309, 89)
+        Me.ClientSize = New System.Drawing.Size(309, 116)
+        Me.Controls.Add(Me.txtBreak)
+        Me.Controls.Add(Me.lblBreak)
         Me.Controls.Add(Me.nudInterval)
         Me.Controls.Add(Me.lblJSON)
         Me.Controls.Add(Me.lblInterval)
@@ -180,4 +200,6 @@ Partial Class formMain
     Friend WithEvents nudInterval As NumericUpDown
     Friend WithEvents lblInterval As Label
     Friend WithEvents btnStop As Button
+    Friend WithEvents lblBreak As Label
+    Friend WithEvents txtBreak As TextBox
 End Class
