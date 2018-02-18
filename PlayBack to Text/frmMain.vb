@@ -200,7 +200,16 @@ Public Class AppFunctions
         'converts playback.json into a string and returns it
         Dim stringJSON As String = GUse.aFunc.JSONtoString()
         Dim parsedNP = JsonConvert.DeserializeObject(Of NowPlaying)(stringJSON)
-        Dim strtowrite As String = My.Settings.OutputString.Replace("%song%", parsedNP.song.title).Replace("%title%", parsedNP.song.title).Replace("%artist%", parsedNP.song.artist).Replace("%album%", parsedNP.song.album)
+        Dim strtowrite As String = ""
+
+        'Dim strtowrite As String = My.Settings.OutputString.Replace("%song%", parsedNP.song.title)
+        Try
+            strtowrite = My.Settings.OutputString.Replace("%song%", parsedNP.song.title).Replace("%title%", parsedNP.song.title).Replace("%artist%", parsedNP.song.artist).Replace("%album%", parsedNP.song.album)
+        Catch ex As Exception
+            strtowrite = My.Settings.OutputString
+        End Try
+
+        formMain.Text = strtowrite
 
         Return strtowrite
 
