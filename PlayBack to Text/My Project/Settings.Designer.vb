@@ -104,13 +104,13 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute(" - ")>  _
-        Public Property BreakString() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("%song% - %artist%")>  _
+        Public Property OutputString() As String
             Get
-                Return CType(Me("BreakString"),String)
+                Return CType(Me("OutputString"),String)
             End Get
             Set
-                Me("BreakString") = value
+                Me("OutputString") = value
             End Set
         End Property
     End Class

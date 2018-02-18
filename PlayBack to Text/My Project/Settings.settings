@@ -14,8 +14,8 @@
     <Setting Name="firstrun" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="BreakString" Type="System.String" Scope="User">
-      <Value Profile="(Default)"> - </Value>
+    <Setting Name="OutputString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">%song% - %artist%</Value>
     </Setting>
   </Settings>
 </SettingsFile>

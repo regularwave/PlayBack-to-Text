@@ -26,7 +26,7 @@
         End If
 
         'set the break string
-        txtBreak.Text = My.Settings.BreakString
+        txtString.Text = My.Settings.OutputString
 
         'if playback.json has been found and a valid path is set, enable start button
         btnStart.Enabled = GUse.aFunc.AllReady()
@@ -84,7 +84,7 @@
         btnReset.Enabled = True
 
         Using sw As New IO.StreamWriter(My.Settings.OutputPath & "\playback.txt")
-            sw.WriteLine(My.Settings.BreakString)
+            sw.WriteLine("-")
         End Using
 
     End Sub
@@ -102,9 +102,9 @@
 
     End Sub
 
-    Private Sub txtBreak_TextChanged(sender As Object, e As EventArgs) Handles txtBreak.TextChanged
+    Private Sub txtString_TextChanged(sender As Object, e As EventArgs) Handles txtString.TextChanged
         'if the break string is changed, save it to BreakString each time it's changed
-        My.Settings.BreakString = txtBreak.Text
+        My.Settings.OutputString = txtString.Text
 
     End Sub
 End Class
@@ -196,10 +196,10 @@ Public Class AppFunctions
     End Function
 
     Function Stringalizer() As String
-        'converts playback.json to a "song - artist" string and returns it
+        'converts playback.json into a string and returns it
         Dim stringJSON As String = GUse.aFunc.JSONtoString()
         Dim parsedNP = JsonConvert.DeserializeObject(Of NowPlaying)(stringJSON)
-        Dim strtowrite As String = parsedNP.song.title & My.Settings.BreakString & parsedNP.song.artist
+        Dim strtowrite As String = My.Settings.OutputString.Replace("%song%", parsedNP.song.title).Replace("%title%", parsedNP.song.title).Replace("%artist%", parsedNP.song.artist).Replace("%album%", parsedNP.song.album)
 
         Return strtowrite
 

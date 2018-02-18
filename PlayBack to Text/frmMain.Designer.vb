@@ -36,8 +36,9 @@ Partial Class formMain
         Me.nudInterval = New System.Windows.Forms.NumericUpDown()
         Me.lblInterval = New System.Windows.Forms.Label()
         Me.btnStop = New System.Windows.Forms.Button()
-        Me.lblBreak = New System.Windows.Forms.Label()
-        Me.txtBreak = New System.Windows.Forms.TextBox()
+        Me.lblString = New System.Windows.Forms.Label()
+        Me.txtString = New System.Windows.Forms.TextBox()
+        Me.ttpStringArgs = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.nudInterval, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -145,29 +146,33 @@ Partial Class formMain
         Me.btnStop.Text = "Stop"
         Me.btnStop.UseVisualStyleBackColor = True
         '
-        'lblBreak
+        'lblString
         '
-        Me.lblBreak.AutoSize = True
-        Me.lblBreak.Location = New System.Drawing.Point(5, 62)
-        Me.lblBreak.Name = "lblBreak"
-        Me.lblBreak.Size = New System.Drawing.Size(35, 13)
-        Me.lblBreak.TabIndex = 5
-        Me.lblBreak.Text = "Break"
+        Me.lblString.AutoSize = True
+        Me.lblString.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblString.ForeColor = System.Drawing.SystemColors.Highlight
+        Me.lblString.Location = New System.Drawing.Point(5, 62)
+        Me.lblString.Name = "lblString"
+        Me.lblString.Size = New System.Drawing.Size(34, 13)
+        Me.lblString.TabIndex = 5
+        Me.lblString.Text = "String"
+        Me.ttpStringArgs.SetToolTip(Me.lblString, "%song% or %title% - song title" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "%artist% - artist" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "%album% - album title")
         '
-        'txtBreak
+        'txtString
         '
-        Me.txtBreak.Location = New System.Drawing.Point(46, 58)
-        Me.txtBreak.Name = "txtBreak"
-        Me.txtBreak.Size = New System.Drawing.Size(100, 20)
-        Me.txtBreak.TabIndex = 6
+        Me.txtString.Location = New System.Drawing.Point(46, 58)
+        Me.txtString.Name = "txtString"
+        Me.txtString.Size = New System.Drawing.Size(100, 20)
+        Me.txtString.TabIndex = 6
+        Me.ttpStringArgs.SetToolTip(Me.txtString, "%title% - song title" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "%artist% - artist" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "%album% - album title")
         '
         'formMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(309, 116)
-        Me.Controls.Add(Me.txtBreak)
-        Me.Controls.Add(Me.lblBreak)
+        Me.Controls.Add(Me.txtString)
+        Me.Controls.Add(Me.lblString)
         Me.Controls.Add(Me.nudInterval)
         Me.Controls.Add(Me.lblJSON)
         Me.Controls.Add(Me.lblInterval)
@@ -200,6 +205,7 @@ Partial Class formMain
     Friend WithEvents nudInterval As NumericUpDown
     Friend WithEvents lblInterval As Label
     Friend WithEvents btnStop As Button
-    Friend WithEvents lblBreak As Label
-    Friend WithEvents txtBreak As TextBox
+    Friend WithEvents lblString As Label
+    Friend WithEvents txtString As TextBox
+    Friend WithEvents ttpStringArgs As ToolTip
 End Class
