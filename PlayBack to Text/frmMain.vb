@@ -152,8 +152,9 @@ Public Class AppFunctions
     End Sub
 
     Function ChooseOutputFolder() As String
-        Dim folderdlog As New FolderBrowserDialog()
-        folderdlog.ShowNewFolderButton = True
+        Dim folderdlog As New FolderBrowserDialog With {
+            .ShowNewFolderButton = True
+        }
 
         'return chosen file directory if OK is clicked, program dir if anything else
         If folderdlog.ShowDialog() = DialogResult.OK Then
@@ -166,12 +167,12 @@ Public Class AppFunctions
 
     Function FindPlaybackFile() As String
         'should never be needed; GPMDP only stores playback.json in one place
-        Dim filedlog As New OpenFileDialog()
-
-        filedlog.InitialDirectory = GVar.defjsondir
-        filedlog.Filter = "playback.json|playback.json"
-        filedlog.RestoreDirectory = True
-        filedlog.Multiselect = False
+        Dim filedlog As New OpenFileDialog With {
+            .InitialDirectory = GVar.defjsondir,
+            .Filter = "playback.json|playback.json",
+            .RestoreDirectory = True,
+            .Multiselect = False
+        }
 
         If filedlog.ShowDialog() = DialogResult.OK Then
             If Dir(filedlog.FileName) <> "" Then
